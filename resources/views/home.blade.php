@@ -3,12 +3,11 @@
 @section('content')
 <div class="container">
     @forelse($posts as $post)
-
+      @can('update-post',$post)
       <h1>{{$post->title}}</h1>
       <p>{{$post->description}}</p>
       <b> Authot: {{$post->user->name}}</b>
 
-      @can('update-post',$post)
       <a href='{{url ("post/$post->id/update")}}'> editar</a>
       <hr>
       @endcan

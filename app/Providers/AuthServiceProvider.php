@@ -14,7 +14,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'App\Model' => 'App\Policies\ModelPolicy',
+        \App\Post::class=>\App\Policies\PostPolicy::class,
     ];
 
     /**
@@ -28,10 +28,12 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies($gate);
 
+       
+       /*
         //pega o user logado e verifica se o id do post e igual aos seus posts
         $gate->define('update-post',function(User $user, Post $post){
             return $user->id == $post->user_id;
         });
-        //
+        */
     }
 }
