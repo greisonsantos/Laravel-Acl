@@ -27,9 +27,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // $posts= Post::all();
+         $posts= Post::all();
         //trás somente os posts do user logado
-        $posts= Post::where('user_id', auth()->user()->id)->get();
+     //   $posts= Post::where('user_id', auth()->user()->id)->get();
       return view('home', compact('posts'));
     }
 
