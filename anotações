@@ -1,0 +1,4 @@
+
+
+ => arquivo para definir os acls
+App/providers /AuthServiceProvider ->metodo boot
